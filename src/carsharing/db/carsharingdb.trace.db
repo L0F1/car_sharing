@@ -1,0 +1,232 @@
+2021-08-25 01:02:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-200]
+2021-08-25 06:38:43 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR UNIQUE NOT NULL, COMPANY_ID INT NOT NULL FOREIGN[*] KEY REFERENCES COMPANY(ID))"; ожидалось "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT, NAME VARCHAR UNIQUE NOT NULL, COMPANY_ID INT NOT NULL FOREIGN[*] KEY REFERENCES COMPANY(ID))"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS car (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR UNIQUE NOT NULL, company_id INT NOT NULL FOREIGN KEY REFERENCES company(id)) [42001-200]
+2021-08-25 06:43:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 06:44:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "CAR" не найдена
+Table "CAR" not found; SQL statement:
+DROP TABLE car [42102-200]
+2021-08-25 07:01:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT SUM(*[*]) AS SUM FROMCAR"; ожидалось "DISTINCT, ALL, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "SELECT SUM(*[*]) AS SUM FROMCAR"; expected "DISTINCT, ALL, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+SELECT SUM(*) AS sum FROMcar [42001-200]
+2021-08-25 07:04:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT SUM(*[*]) AS SUM FROM CAR"; ожидалось "DISTINCT, ALL, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "SELECT SUM(*[*]) AS SUM FROM CAR"; expected "DISTINCT, ALL, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+SELECT SUM(*) AS sum FROM car [42001-200]
+2021-08-25 07:05:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SUM или AVG на недопустимом типе данных "SUM(NAME)"
+SUM or AVG on wrong data type for "SUM(NAME)"; SQL statement:
+SELECT SUM(name) AS sum FROM car [90015-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.aggregate.Aggregate.optimize(Aggregate.java:758)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.dml.Select.prepare(Select.java:1206)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at carsharing.DAO.rows(DAO.java:59)
+	at carsharing.Main.chooseCompanyMenu(Main.java:91)
+	at carsharing.Main.mainMenu(Main.java:65)
+	at carsharing.Main.logInMenu(Main.java:39)
+	at carsharing.Main.main(Main.java:26)
+2021-08-25 07:06:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 07:06:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 07:08:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 07:58:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 08:03:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 08:09:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 08:12:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
+No data is available [2000-200]
+2021-08-25 08:21:43 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "COMPANY_ID" не найден
+Column "COMPANY_ID" not found; SQL statement:
+INSERT INTO company (name, company_id) VALUES ('q',1) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.command.Parser.parseColumn(Parser.java:1450)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DAO.add(DAO.java:47)
+	at carsharing.Car.add(Car.java:33)
+	at carsharing.Main.companyMenu(Main.java:129)
+	at carsharing.Main.companyMenu(Main.java:123)
+	at carsharing.Main.chooseCompanyMenu(Main.java:104)
+	at carsharing.Main.mainMenu(Main.java:66)
+	at carsharing.Main.logInMenu(Main.java:39)
+	at carsharing.Main.main(Main.java:26)
+2021-08-25 20:52:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно удалить "COMPANY", пока существует зависимый объект "CONSTRAINT_103"
+Cannot drop "COMPANY" because "CONSTRAINT_103" depends on it; SQL statement:
+DROP TABLE company IF EXISTS [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DAO.drop(DAO.java:70)
+	at carsharing.DAO.close(DAO.java:79)
+	at carsharing.Company.close(Company.java:44)
+	at carsharing.Main.logInMenu(Main.java:43)
+	at carsharing.Main.main(Main.java:26)
+2021-08-26 04:58:33 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно удалить "CAR", пока существует зависимый объект "CONSTRAINT_52C"
+Cannot drop "CAR" because "CONSTRAINT_52C" depends on it; SQL statement:
+DROP TABLE car IF EXISTS [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DAO.drop(DAO.java:73)
+	at carsharing.DAO.close(DAO.java:82)
+	at carsharing.Car.close(Car.java:33)
+	at carsharing.Main.logInMenu(Main.java:61)
+	at carsharing.Main.logInMenu(Main.java:57)
+	at carsharing.Main.logInMenu(Main.java:57)
+	at carsharing.Main.main(Main.java:26)
+2021-08-26 04:58:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Невозможно удалить "COMPANY", пока существует зависимый объект "CONSTRAINT_103"
+Cannot drop "COMPANY" because "CONSTRAINT_103" depends on it; SQL statement:
+DROP TABLE company IF EXISTS [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DAO.drop(DAO.java:73)
+	at carsharing.DAO.close(DAO.java:82)
+	at carsharing.Company.close(Company.java:45)
+	at carsharing.Main.logInMenu(Main.java:62)
+	at carsharing.Main.logInMenu(Main.java:57)
+	at carsharing.Main.logInMenu(Main.java:57)
+	at carsharing.Main.main(Main.java:26)
+2021-08-26 07:48:59 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "GOVNO" не найден
+Column "GOVNO" not found; SQL statement:
+SELECT car.id AS car_id FROM car JOIN company ON car.company_id = company.id WHERE car.name =  govno AND company.id = 1 [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:191)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:135)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:135)
+	at org.h2.command.dml.Select.prepare(Select.java:1209)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at carsharing.Customer.rentCar(Customer.java:32)
+	at carsharing.Main.rentCarChooseCarMenu(Main.java:252)
+	at carsharing.Main.rentCarChooseComMenu(Main.java:234)
+	at carsharing.Main.customerMenu(Main.java:155)
+	at carsharing.Main.chooseCustomerMenu(Main.java:118)
+	at carsharing.Main.logInMenu(Main.java:47)
+	at carsharing.Main.logInMenu(Main.java:55)
+	at carsharing.Main.main(Main.java:24)
+2021-08-26 07:50:35 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "GOVNO" не найден
+Column "GOVNO" not found; SQL statement:
+SELECT car.id AS car_id FROM car JOIN company ON car.company_id = company.id WHERE car.name = govno AND company.id = 1 [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:191)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:135)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:135)
+	at org.h2.command.dml.Select.prepare(Select.java:1209)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at carsharing.Customer.rentCar(Customer.java:32)
+	at carsharing.Main.rentCarChooseCarMenu(Main.java:252)
+	at carsharing.Main.rentCarChooseComMenu(Main.java:234)
+	at carsharing.Main.customerMenu(Main.java:155)
+	at carsharing.Main.customerMenu(Main.java:171)
+	at carsharing.Main.chooseCustomerMenu(Main.java:118)
+	at carsharing.Main.logInMenu(Main.java:47)
+	at carsharing.Main.main(Main.java:24)
+2021-08-26 07:53:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "GOVNO" не найден
+Column "GOVNO" not found; SQL statement:
+SELECT company.name AS com_name FROM company JOIN car ON company.id = car.company_id WHERE car.name = govno [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:191)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:135)
+	at org.h2.command.dml.Select.prepare(Select.java:1209)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at carsharing.Customer.getRentedCar(Customer.java:85)
+	at carsharing.Main.customerMenu(Main.java:169)
+	at carsharing.Main.customerMenu(Main.java:157)
+	at carsharing.Main.customerMenu(Main.java:164)
+	at carsharing.Main.customerMenu(Main.java:171)
+	at carsharing.Main.chooseCustomerMenu(Main.java:118)
+	at carsharing.Main.logInMenu(Main.java:47)
+	at carsharing.Main.main(Main.java:24)

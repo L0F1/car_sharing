@@ -1,0 +1,6 @@
+2021-08-26 09:02:35 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE CAR SET IS_RENTED = FALSE FROM[*] CAR JOIN CUSTOMER ON CAR.ID = RENTED_CAR_ID WHERE CUSTOMER.ID = 1"; SQL statement:
+UPDATE car SET is_rented = FALSE FROM car JOIN customer ON car.id = rented_car_id WHERE customer.id = 1 [42000-200]
+2021-08-26 09:05:18 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE CAR JOIN[*] CUSTOMER ON CAR.ID = RENTED_CAR_ID SET IS_RENTED = FALSE WHERE CUSTOMER.ID = 1"; expected "., AS, SET"; SQL statement:
+UPDATE car JOIN customer ON car.id = rented_car_id SET is_rented = FALSE WHERE customer.id = 1 [42001-200]

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Car_Sharing.iml" filepath="$PROJECT_DIR$/.idea/modules/Car_Sharing.iml" group="Car_Sharing" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Car Sharing/task/Car_Sharing-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Car Sharing/task/Car_Sharing-task.iml" group="Car_Sharing/Car_Sharing-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Car Sharing/task/Car_Sharing-task_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Car Sharing/task/Car_Sharing-task_main.iml" group="Car_Sharing/Car_Sharing-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Car Sharing/task/Car_Sharing-task_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Car Sharing/task/Car_Sharing-task_test.iml" group="Car_Sharing/Car_Sharing-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="Car_Sharing/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_main.iml" group="Car_Sharing/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_test.iml" group="Car_Sharing/util" />
+    </modules>
+  </component>
+</project>
